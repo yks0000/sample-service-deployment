@@ -71,7 +71,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: sample-service # Replace with the actual name of your deployment
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 5
   metrics:
   - type: Object
