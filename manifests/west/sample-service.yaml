@@ -17,6 +17,13 @@ spec:
         image: yks0000/sample-service:latest
         ports:
         - containerPort: 8000
+        resources:
+          limits:
+            cpu: "100m"
+            memory: 100Mi
+          requests:
+            cpu: "75m"
+            memory: 75Mi
         livenessProbe:
           httpGet:
             path: /
