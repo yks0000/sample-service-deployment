@@ -61,3 +61,27 @@ spec:
   - protocol: TCP
     port: 8490
     targetPort: 8000 # The port your app exposes metrics on
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sample-service-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sample-service # Replace with the actual name of your deployment
+  minReplicas: 2
+  maxReplicas: 5
+  metrics:
+  - type: Object
+    object:
+      metric:
+        name: namespace_app_container_avg_cpu_utilization
+      describedObject:
+        apiVersion: v1
+        kind: Namespace
+        name: cluster-west # Or the specific namespace you want to monitor
+      target:
+        type: Value # Or 'Value' depending on how the metric is reported
+        value: "20"
