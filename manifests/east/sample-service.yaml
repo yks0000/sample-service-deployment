@@ -77,11 +77,22 @@ spec:
   - type: Object
     object:
       metric:
-        name: namespace_app_container_avg_cpu_utilization
+        name: namespace_east_app_container_avg_cpu_utilization
       describedObject:
         apiVersion: v1
         kind: Namespace
         name: cluster-east # Or the specific namespace you want to monitor
       target:
         type: Value # Or 'Value' depending on how the metric is reported
-        value: "20"
+        value: "15"
+  - type: Object
+    object:
+      metric:
+        name: namespace_east_custom_synced_cpu_test_metric
+      describedObject:
+        apiVersion: v1
+        kind: Namespace
+        name: cluster-east # Or the specific namespace you want to monitor
+      target:
+        type: Value # Or 'Value' depending on how the metric is reported
+        value: "15"
