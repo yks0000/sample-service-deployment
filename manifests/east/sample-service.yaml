@@ -75,7 +75,7 @@ spec:
     kind: Deployment
     name: sample-service # Replace with the actual name of your deployment
   minReplicas: 1
-  maxReplicas: 5
+  maxReplicas: 15
   metrics:
   - type: Object
     object:
