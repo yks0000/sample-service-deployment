@@ -103,4 +103,4 @@ spec:
         name: cluster-east # Or the specific namespace you want to monitor
       target:
         type: Value # Or 'Value' depending on how the metric is reported
-        value: "15"
+        value: "1"
