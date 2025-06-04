@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: yks0000/sample-service:latest
+        image: yks0000/sample-service:v2
         ports:
         - containerPort: 8000
         resources:
